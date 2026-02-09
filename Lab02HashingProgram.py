@@ -69,12 +69,12 @@ def validate_hash():
     for filepath, stored_hash in stored_files.items():  
         if filepath in current_files:
             if current_files[filepath] != stored_hash:
-                print(f"hash is invalid: {filepath}")
+                print(f"Modified: {filepath}")
                 problem_count += 1
             else:
-                print(f"hash is valid: {filepath}")
+                print(f"Valid: {filepath}")
         else:
-            print(f"file is gone: {filepath}")
+            print(f"file is deleted: {filepath}")
             problem_count += 1
 
     for filepath in current_files:
@@ -112,3 +112,7 @@ def main():
 
         else:
             print("Invalid choice. Please try again.")
+
+
+if __name__ == "__main__":
+    main()
